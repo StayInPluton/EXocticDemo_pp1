@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+    <header>
+        <!-- Include the header partial -->
+        <%- include('../partials/header') %>
+    </header>
+
+    <!-- Cadastro -->
+    <div class="contact-form spad">
+        <div class="container">
+            <div class="row">
+                
+            </div>
+            <form action="#">
+                <input type="text" name="nome" placeholder="Nome">
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                <input type="number" name="preco" placeholder="Preço">
+                <input type="text" name="Categoria_id_categoria" placeholder="Categoria">
+                <button type="submit" class="site-btn">Registrar</button>
+            </form>
+        </div>
+    </div>
+    <!--fim do cadastro -->
+
+   
+        <!-- Include the footer partial -->
+        <%- include('../partials/footer') %>
+
+    <%- include('../partials/jsPlugins') %>
+</body>
+
+</html>

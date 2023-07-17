@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+    <header>
+        <!-- Include the header partial -->
+        <%- include('../partials/header') %>
+    </header>
+
+    <%- include('../partials/hero') %>
+
+    <!-- Categories Section Begin -->
+    <section>
+        <div class="section-title">
+            <h2>Destaques</h2>
+        </div>
+    </section>
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cate1.jpg">
+                            <h5><a href="#">Gravidade zero</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cate2.jpg">
+                            <h5><a href="./ovoMilenar.html">Ovo milenar</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cate3.jpg">
+                            <h5><a href="#">No fundo do mar</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cate4.jpg">
+                            <h5><a href="./safariAfricano.html">Safari</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cate5.jpg">
+                            <h5><a href="./mergulhaTuba.html">Mergulho com tubarões</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Categorias</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li class="active" data-filter="*">Todos</li>
+                            <li data-filter=".terrestre">Terrestre</li>
+                            <li data-filter=".aquatico">Aquático</li>
+                            <li data-filter=".aereo">Aéreo</li>
+                            <li data-filter=".espacial">Espacial</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row featured__filter">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix espacial aereo">
+                    <div class="featured__item">
+                        <a href="#">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature1.jpg"></div>
+                            <div class="featured__item__text">
+                                <h6><a href="#">Gravidade zero</a></h6>
+                                <h5>R$30.000</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix terrestre">
+                    <div class="featured__item">
+                        <a href="./ovoMilenar.html">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature2.jpg"></div>
+                            <div class="featured__item__text">
+                                <h6><a href="./ovoMilenar.html">Ovo milenar</a></h6>
+                                <h5>R$7560,50</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix aquatico">
+                    <div class="featured__item">
+                        <a href="./noFundo.html">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature3.jpg"></div>
+                            <div class="featured__item__text">
+                                <h6><a href="./noFundo.html">No fundo do mar</a></h6>
+                                <h5>R$17.708,68</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix terrestre">
+                    <div class="featured__item">
+                        <a href="./safariAfricano.html">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature4.jpg"></div>
+                            <div class="featured__item__text">
+                                <h6><a href="./safariAfricano.html">Safari</a></h6>
+                                <h5>R$5670,80</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix aquatico">
+                    <div class="featured__item">
+                        <a href="./mergulhaTuba.html">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature5.jpg"></div>
+                            <div class="featured__item__text">
+                                <h6><a href="./mergulhaTuba.html">Mergulho com tubarões</a></h6>
+                                <h5>R$2458,45</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix aereo">
+                    <div class="featured__item">
+                        <a href="./paraquedas.html">
+                            <div class="featured__item__pic set-bg" data-setbg="img/featured/feature6.jpg"></div>
+                            <div class="featured__item__text">
+                                <h6><a href="./paraquedas.html">Paraquedas</a></h6>
+                                <h5>R$2300,70</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix terrestre">
+                    <div class="featured__item">
+                        <a href="./btMedieval.html">
+                            <div class="featured__item__pic set-bg" data-setbg="./img/medieval3.jpg"></div>
+                            <div class="featured__item__text">
+                                <h6><a href="./btMedieval.html">Batalha Medieval</a></h6>
+                                <h5>R$230,70</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+
+        <!-- Include the footer partial -->
+        <%- include('../partials/footer') %>
+
+    <%- include('../partials/jsPlugins') %>
+</body>
+
+</html>

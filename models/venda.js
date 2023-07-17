@@ -32,8 +32,7 @@ const Vendas = sequelize.define('Venda', {
     }
   }
 }, {
-  tableName: 'Venda',
-  timestamps: false
+  tableName: 'Venda'
 });
 
 module.exports = Vendas;

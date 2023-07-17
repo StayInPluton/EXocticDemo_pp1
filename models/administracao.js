@@ -24,14 +24,6 @@ const Administracao = sequelize.define('Administracao', {
     type: DataTypes.STRING(10),
     allowNull: false
   },
-  Banner_id_banner: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-        model: Banner,
-        key: 'id_banner'
-      }
-  }
 }, {
   tableName: 'administracao'
 });

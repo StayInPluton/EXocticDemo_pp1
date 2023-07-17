@@ -2,10 +2,7 @@ const express = require('express');
 const { Sequelize } = require('sequelize');
 const bodyParser = require('body-parser')
 const path = require('path');
-const session = require('express-session');
-const morgan = require('morgan');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const publicPath = path.join(__dirname, 'public');
 const dotenv = require('dotenv');
 const app = express();
 //models
@@ -34,29 +31,13 @@ sequelize
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-// dotenv
-dotenv.config();
-
 // view engine
 app.set('view engine', 'ejs');
+app.set('views',path.join(__dirname, 'views/pages'))
 
-// Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
-}));
-app.use(morgan('dev'));
 
-// Configuração do middleware de sessão
-app.use(session({
-  secret: 'mySecretKey', // Substitua por uma chave secreta forte
-  resave: false,
-  saveUninitialized: false
-}));
-
+//public
+app.use(express.static(publicPath));
 // Rotas
 const categoriasRoutes = require('./routes/categoriasRoutes');
 const usuariosRoutes = require('./routes/usuariosRoutes');
@@ -78,6 +59,29 @@ const administracaoRoutes = require('./routes/administracaoRoutes');
   app.use('/banner', bannerRoutes);
   //administracao
   app.use('/administracao', administracaoRoutes);
+
+//Rotas de acesso
+  //home
+  app.get('/', (req, res) => {
+    res.render('home');
+  });
+  app.get('/detalhes', (req, res) => {
+    res.render('shopDetails');
+  });
+  app.get('/carrinho', (req, res) => {
+    res.render('shopCart');
+  });
+  app.get('/login', (req, res) => {
+    res.render('login');
+  });
+  app.get('/cadastro', (req, res) => {
+    res.render('cadastro');
+  });
+  app.get('/cadastroexp', (req, res) => {
+    res.render('cadastroExp');
+  });
+  
+  
 
 // Rota do servidor 
 const port = process.env.PORT || 3000;

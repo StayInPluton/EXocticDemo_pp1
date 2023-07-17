@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const Venda = require('./venda')
+const Categoria = require('./categoria')
 const sequelize = new Sequelize('exoctic', 'root', 'root', {
   host: 'localhost',
   dialect: 'mysql'
@@ -16,32 +17,25 @@ const Experiencias = sequelize.define('Experiencias', {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    codigo_de_venda: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
     informacoes: {
       type: DataTypes.TEXT,
       allowNull: true
     },
     preco: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     experienciascol: {
       type: DataTypes.FLOAT,
       allowNull: true
     },
-    id_categoria: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    Venda_id_venda: {
+    
+    Categoria_nome_categoria: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: Venda,
-        key: 'id_venda'
+      references:{
+        model: Categoria,
+        key: 'nome'
       }
     }
   }, {

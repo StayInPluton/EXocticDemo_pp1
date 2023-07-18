@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer'); // For handling file uploads
-const path = require('path');
 const Experiencias = require('../models/experiencias');
 
 // Route to get all experiences
@@ -19,18 +17,21 @@ router.get('/experiencias', (req, res) => {
 
 // Route to create a new experience
 router.post('/experiencias', (req, res) => {
-  const { nome, codigo_de_venda, informacoes, preco, experienciascol,Categoria_nome_categoria } = req.body;
+  const { nome, informacoes, preco, categoria } = req.body;
 
-  Experiencias.create({ nome, codigo_de_venda, informacoes, preco, experienciascol, id_categoria, Categoria_nome_categoria })
+  Experiencias.create({ nome, informacoes, preco, categoria })
     .then((experiencia) => {
       console.log(experiencia);
       res.send('Experiência cadastrada com sucesso.');
+      alert('Experiência cadastrada com sucesso.');
     })
     .catch((err) => {
       console.error(err);
       res.status(500).send('Erro ao cadastrar a experiência.');
+      alert('Erro ao cadastrar a experiência.');
     });
 });
+
 
 // Route to get an experience by ID
 router.get('/experiencias/:id', (req, res) => {

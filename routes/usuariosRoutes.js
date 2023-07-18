@@ -19,6 +19,10 @@ router.get('/usuarios', (req, res) => {
 router.post('/usuarios', (req, res) => {
   const { nome, email, senha, cpf, numero_telefone, nascimento } = req.body;
 
+  if (!nome || !email || !senha || !cpf || !numero_telefone || !nascimento) {
+    return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
+  }
+
   Usuario.create({ nome, email, senha, cpf, numero_telefone, nascimento })
     .then((usuario) => {
       console.log(usuario);
@@ -29,6 +33,8 @@ router.post('/usuarios', (req, res) => {
       res.status(500).send('Erro ao cadastrar o usuário.');
     });
 });
+
+
 
 // Route to get a user by ID
 router.get('/usuarios/:id', (req, res) => {

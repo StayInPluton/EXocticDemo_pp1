@@ -14,21 +14,35 @@
     <!-- Cadastro -->
     <div class="contact-form spad">
         <div class="container">
+          <div class="row">
+            
+          </div>
+          <form action="/experiencias/experiencias" method="POST">
             <div class="row">
-                
+              <div class="col-lg-6 col-md-6">
+                <input type="text" placeholder="Nome" name="nome">
+              </div>
+              <div class="col-lg-12">
+                <textarea placeholder="Informações" name="informacoes"></textarea>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <input type="number" placeholder="Preço" name="preco">
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <select name="categoria">
+                  <option value="aerea">Aérea</option>
+                  <option value="terrestre">Terrestre</option>
+                  <option value="aquatica">Aquática</option>
+                  <option value="espacial">Espacial</option>
+                </select>
+              </div>
+              <div class="col-lg-12">
+                <button type="submit" class="site-btn">Cadastrar</button>
+              </div>
             </div>
-            <form action="#">
-                <input type="text" name="nome" placeholder="Nome">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-                <input type="number" name="preco" placeholder="Preço">
-                <input type="text" name="Categoria_id_categoria" placeholder="Categoria">
-                <button type="submit" class="site-btn">Registrar</button>
-            </form>
+          </form>
         </div>
-    </div>
+      </div>
     <!--fim do cadastro -->
 
    

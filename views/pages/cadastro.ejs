@@ -18,32 +18,32 @@
             <div class="row">
                 
             </div>
-            <form action="#">
+            <form action="/usuarios/usuarios" method="POST">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Seu nome">
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Email">
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="password" placeholder="Senha">
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="CPF">
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Celular">
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="date" placeholder="nascimento">
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <button type="submit" class="site-btn">Cadastrar</button>
-                    </div>
-                    
+                  <div class="col-lg-6 col-md-6">
+                    <input type="text" placeholder="Seu nome" name="nome">
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <input type="email" placeholder="Email" name="email">
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <input type="password" placeholder="Senha" name="senha">
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <input type="text" placeholder="CPF" name="cpf">
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <input type="text" placeholder="Celular" name="numero_telefone">
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <input type="date" placeholder="Nascimento" name="nascimento">
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <button type="submit" class="site-btn">Cadastrar</button>
+                  </div>
                 </div>
-            </form>
+              </form>
+              
         </div>
     </div>
     <!--fim do cadastro -->
@@ -54,4 +54,4 @@
     <%- include('../partials/jsPlugins') %>
 </body>
 
-</html>
+</html

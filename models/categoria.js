@@ -22,7 +22,7 @@ const Categoria = sequelize.define('Categorias', {
 });
 
 // sync das tabelas
-Categoria.sync({ force: true }) 
+Categoria.sync({ force: false }) 
   .then(() => {
     console.log('tabela categoria criada');
   })

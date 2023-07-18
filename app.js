@@ -27,9 +27,8 @@ sequelize
   });
 
 // body-parser
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
-
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 // view engine
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname, 'views/pages'))
@@ -43,6 +42,7 @@ const usuariosRoutes = require('./routes/usuariosRoutes');
 const experienciasRoutes = require('./routes/experienciasRoutes');
 const vendasRoutes = require('./routes/vendasRoutes');
 const administracaoRoutes = require('./routes/administracaoRoutes');
+const loginRoute = require('./routes/loginRoute')
 
 // adicionando rotas
   //categorias
@@ -55,6 +55,8 @@ const administracaoRoutes = require('./routes/administracaoRoutes');
   app.use('/vendas', vendasRoutes);
   //administracao
   app.use('/administracao', administracaoRoutes);
+  //login
+  app.use('/login', loginRoute);
 
 //Rotas de acesso
   //home
@@ -67,8 +69,8 @@ const administracaoRoutes = require('./routes/administracaoRoutes');
   app.get('/carrinho', (req, res) => {
     res.render('shopCart');
   });
-  app.get('/login', (req, res) => {
-    res.render('login');
+  app.get('/login-user', (req, res) => {
+    res.render('loginUser');
   });
   app.get('/cadastro', (req, res) => {
     res.render('cadastro');

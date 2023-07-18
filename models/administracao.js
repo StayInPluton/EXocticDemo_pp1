@@ -24,11 +24,12 @@ const Administracao = sequelize.define('Administracao', {
     allowNull: false
   },
 }, {
-  tableName: 'administracao'
+  tableName: 'administracao',
+  timestamps: false
 });
 
 // sync das tabelas
-Administracao.sync({ force: true }) 
+Administracao.sync({ force: false }) 
   .then(() => {
     console.log('tabela administracao criada');
   })

@@ -1,5 +1,4 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const Banner = require('./banner');
 const sequelize = new Sequelize('exoctic', 'root', 'root', {
   host: 'localhost',
   dialect: 'mysql'
@@ -29,7 +28,7 @@ const Administracao = sequelize.define('Administracao', {
 });
 
 // sync das tabelas
-Administracao.sync({ force: false }) 
+Administracao.sync({ force: true }) 
   .then(() => {
     console.log('tabela administracao criada');
   })

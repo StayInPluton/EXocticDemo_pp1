@@ -3,7 +3,6 @@ const router = express.Router();
 const multer = require('multer'); // For handling file uploads
 const path = require('path');
 const Experiencias = require('../models/experiencias');
-const Photo = require('../models/photo');
 
 // Route to get all experiences
 router.get('/experiencias', (req, res) => {
@@ -20,9 +19,9 @@ router.get('/experiencias', (req, res) => {
 
 // Route to create a new experience
 router.post('/experiencias', (req, res) => {
-  const { nome, codigo_de_venda, informacoes, preco, experienciascol, id_categoria, Venda_id_venda } = req.body;
+  const { nome, codigo_de_venda, informacoes, preco, experienciascol,Categoria_nome_categoria } = req.body;
 
-  Experiencias.create({ nome, codigo_de_venda, informacoes, preco, experienciascol, id_categoria, Venda_id_venda })
+  Experiencias.create({ nome, codigo_de_venda, informacoes, preco, experienciascol, id_categoria, Categoria_nome_categoria })
     .then((experiencia) => {
       console.log(experiencia);
       res.send('Experiência cadastrada com sucesso.');
@@ -90,43 +89,6 @@ router.delete('/experiencias/:id', (req, res) => {
     .catch((err) => {
       console.error(err);
       res.status(500).send('Erro ao excluir a experiência.');
-    });
-});
-
-// PARTE DE FOTOS
-// Set up multer storage configuration
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Set the destination folder for storing uploaded photos
-  },
-  filename: (req, file, cb) => {
-    const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1E9)}`;
-    const fileExtension = path.extname(file.originalname);
-    cb(null, `${uniqueSuffix}${fileExtension}`); // Set the filename for the uploaded photo
-  }
-});
-
-// Set up multer upload instance
-const upload = multer({ storage });
-
-// Route for uploading a photo and associating it with an experience
-router.post('/experiencias/:id/photo', upload.single('photo'), (req, res) => {
-  const { id } = req.params;
-  const { filename, path } = req.file;
-
-  // Create a new photo record in the database
-  Photo.create({
-    url: path, // Save the file path or URL in the database
-    description: req.body.description, // Get the description from the request body
-    experiencias_id: id // Associate the photo with the specified experience
-  })
-    .then((photo) => {
-      console.log(photo);
-      res.send('Photo uploaded and associated with experience successfully.');
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error uploading photo.');
     });
 });
 

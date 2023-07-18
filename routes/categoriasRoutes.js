@@ -17,9 +17,9 @@ router.get('/categorias', (req, res) => {
 
 // Route to create a new category
 router.post('/categorias', (req, res) => {
-  const { nome, id_banner } = req.body;
+  const { nome } = req.body;
 
-  Categoria.create({ nome, id_banner })
+  Categoria.create({ nome })
     .then((categoria) => {
       console.log(categoria);
       res.send('Categoria cadastrada com sucesso.');
@@ -52,10 +52,10 @@ router.get('/categorias/:id', (req, res) => {
 // Route to update a category by ID
 router.put('/categorias/:id', (req, res) => {
   const { id } = req.params;
-  const { nome, id_banner } = req.body;
+  const { nome } = req.body;
 
   Categoria.update(
-    { nome, id_banner },
+    { nome },
     { where: { id_categoria: id } }
   )
     .then((result) => {

@@ -17,9 +17,9 @@ router.get('/administradores', (req, res) => {
 
 // Route to create a new administrator
 router.post('/administradores', (req, res) => {
-  const { nomel, email, senha, Banner_id_banner } = req.body;
+  const { nomel, email, senha } = req.body;
 
-  Administracao.create({ nomel, email, senha, Banner_id_banner })
+  Administracao.create({ nomel, email, senha })
     .then((administrador) => {
       console.log(administrador);
       res.send('Administrador cadastrado com sucesso.');
@@ -52,10 +52,10 @@ router.get('/administradores/:id', (req, res) => {
 // Route to update an administrator by ID
 router.put('/administradores/:id', (req, res) => {
   const { id } = req.params;
-  const { nomel, email, senha, Banner_id_banner } = req.body;
+  const { nomel, email, senha } = req.body;
 
   Administracao.update(
-    { nomel, email, senha, Banner_id_banner },
+    { nomel, email, senha },
     { where: { id_administracao: id } }
   )
     .then((result) => {

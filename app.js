@@ -9,8 +9,7 @@ const app = express();
 const Categoria = require('./models/categoria');
 const Usuario = require('./models/usuario');
 const Venda = require('./models/venda');
-const Experiencias = require('./models/experiencia');
-const Banner = require('./models/banner');
+const Experiencias = require('./models/experiencias');
 const Administracao = require('./models/administracao');
 // confiurações importantes
 // Sequelize
@@ -43,7 +42,6 @@ const categoriasRoutes = require('./routes/categoriasRoutes');
 const usuariosRoutes = require('./routes/usuariosRoutes');
 const experienciasRoutes = require('./routes/experienciasRoutes');
 const vendasRoutes = require('./routes/vendasRoutes');
-const bannerRoutes = require('./routes/bannerRoutes');
 const administracaoRoutes = require('./routes/administracaoRoutes');
 
 // adicionando rotas
@@ -55,8 +53,6 @@ const administracaoRoutes = require('./routes/administracaoRoutes');
   app.use('/experiencias', experienciasRoutes);
   //vendas
   app.use('/vendas', vendasRoutes);
-  //banner
-  app.use('/banner', bannerRoutes);
   //administracao
   app.use('/administracao', administracaoRoutes);
 

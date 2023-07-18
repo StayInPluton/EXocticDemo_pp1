@@ -15,16 +15,14 @@ const Categoria = sequelize.define('Categorias', {
     type: DataTypes.STRING(30),
     allowNull: true
   },
-  id_banner: {
-    type: DataTypes.INTEGER,
-    allowNull: true
-  }
+
 }, {
-  tableName: 'categoria'
+  tableName: 'categoria',
+  timestamps: false
 });
 
 // sync das tabelas
-Categoria.sync({ force: false }) 
+Categoria.sync({ force: true }) 
   .then(() => {
     console.log('tabela categoria criada');
   })

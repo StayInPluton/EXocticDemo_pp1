@@ -32,11 +32,9 @@ const Vendas = sequelize.define('Venda', {
     }
   }
 }, {
-  tableName: 'Venda'
+  tableName: 'Venda',
+  timestamps: false
 });
-
-module.exports = Vendas;
-
   
  // sync das tabelas
 Vendas.sync({ force: false }) 

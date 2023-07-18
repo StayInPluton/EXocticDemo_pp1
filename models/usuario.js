@@ -36,7 +36,8 @@ const Usuario = sequelize.define('Usuarios', {
     allowNull: false
   }
 }, {
-  tableName: 'usuario'
+  tableName: 'usuario',
+  timestamps: false
 });
 
 // sync das tabelas

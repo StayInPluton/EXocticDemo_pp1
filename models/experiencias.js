@@ -22,24 +22,16 @@ const Experiencias = sequelize.define('Experiencias', {
       allowNull: true
     },
     preco: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    experienciascol: {
       type: DataTypes.FLOAT,
       allowNull: true
     },
-    
-    Categoria_nome_categoria: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references:{
-        model: Categoria,
-        key: 'nome'
-      }
+    categoria: {
+      type: DataTypes.STRING(30),
+      allowNull: false
     }
   }, {
-    tableName: 'experiencias'
+    tableName: 'experiencias',
+    timestamps: false
   });
 
  // sync das tabelas
